@@ -1,76 +1,1205 @@
-Создай полностью готовый современный одностраничный сайт для компании TOTAL FLOW.
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TOTAL FLOW - профессиональный колл-центр, лидогенерация и телемаркетинг для вашего бизнеса. Увеличиваем продажи через качественную обработку заявок и входящих звонков.">
+    <meta name="keywords" content="колл-центр, лидогенерация, телемаркетинг, обработка заявок, продажи, CRM Bitrix24">
+    <meta name="author" content="TOTAL FLOW">
+    <meta property="og:title" content="TOTAL FLOW - Профессиональный колл-центр и лидогенерация">
+    <meta property="og:description" content="Увеличиваем продажи вашего бизнеса через профессиональный колл-центр и лидогенерацию">
+    <meta property="og:type" content="website">
+    <title>TOTAL FLOW - Колл-центр и Лидогенерация для Бизнеса</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23000' width='100' height='100'/%3E%3Cpath fill='%238B5CF6' d='M30 50 Q50 30 70 50 Q50 70 30 50'/%3E%3C/svg%3E">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Сфера деятельности:
-Колл-центр для бизнеса, лидогенерация, обработка заявок, телемаркетинг и продажи.
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --tertiary-bg: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f97316;
+            --accent-purple-light: #a78bfa;
+            --accent-orange-light: #fb923c;
+            --border-color: #333333;
+        }
 
-Стиль:
+        html {
+            scroll-behavior: smooth;
+        }
 
-* Премиальный корпоративный дизайн.
-* Темно-синий, белый и голубой цвета.
-* Современные анимации.
-* Адаптивность для телефонов и компьютеров.
-* Минималистичный и профессиональный внешний вид.
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-Структура сайта:
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+            animation: slideDown 0.6s ease-out;
+        }
 
-Главный экран:
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-* Логотип TOTAL FLOW.
-* Заголовок:
-  "Увеличиваем продажи вашего бизнеса"
-* Подзаголовок:
-  "Профессиональный колл-центр и лидогенерация для компаний любого масштаба."
-* Кнопка "Оставить заявку".
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-Наши услуги:
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-* Исходящие продажи.
-* Входящие звонки.
-* Обработка заявок.
-* Телемаркетинг.
-* Поддержка клиентов.
-* Назначение встреч для отдела продаж.
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
-Почему выбирают нас:
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
 
-* Опытная команда операторов.
-* Высокая конверсия.
-* Контроль качества разговоров.
-* Индивидуальный подход.
-* Быстрый запуск проектов.
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
 
-Как мы работаем:
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-orange));
+            transition: width 0.3s ease;
+        }
 
-1. Получаем заявку.
-2. Анализируем задачи бизнеса.
-3. Запускаем проект.
-4. Предоставляем отчеты и результаты.
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
 
-Форма заявки:
+        .nav-links a:hover:after {
+            width: 100%;
+        }
 
-* Имя.
-* Компания.
-* Телефон.
-* Email.
-* Комментарий.
-* Кнопка "Отправить заявку".
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
 
-После отправки формы выводить сообщение:
-"Спасибо за обращение в TOTAL FLOW. Мы свяжемся с вами в ближайшее время."
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
 
-Подвал сайта:
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
 
-* Название компании TOTAL FLOW.
-* Email.
-* Телефон.
-* Telegram.
-* WhatsApp.
+        .cta-button:hover::before {
+            left: 100%;
+        }
 
-Технические требования:
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.35rem;
+        }
 
-* Один файл index.html.
-* Встроенные CSS и JavaScript.
-* Плавная прокрутка.
-* Современные иконки.
-* SEO-заголовок и описание.
-* Чистый профессиональный код.
+        .burger-menu span {
+            width: 25px;
+            height: 2.5px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-accent {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--accent-purple);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-orange));
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-10px);
+            background: var(--tertiary-bg);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us */
+        .why-section {
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .why-icon {
+            font-size: 2rem;
+            color: var(--accent-purple);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .why-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* How We Work */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-orange);
+        }
+
+        .step h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
+            border-radius: 1rem;
+            padding: 3rem;
+        }
+
+        .form-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .form-submit:hover::before {
+            left: 100%;
+        }
+
+        .success-message {
+            display: none;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(249, 115, 22, 0.2));
+            border: 1px solid var(--accent-purple);
+            border-radius: 0.5rem;
+            color: var(--accent-purple-light);
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-purple);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            background: var(--tertiary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-purple);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(249, 115, 22, 0.1));
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent-purple);
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-highlight strong {
+            color: var(--accent-purple);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .feature-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-bg);
+                border-bottom: 1px solid var(--border-color);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons button,
+            .hero-buttons a {
+                width: 100%;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .form-section {
+                padding: 2rem 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Page transitions */
+        .page {
+            display: none;
+            animation: pageEnter 0.5s ease-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="navigateTo('home')">
+                TOTAL FLOW
+            </div>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="navigateTo('home'); return false;">Главная</a></li>
+                <li><a href="#" onclick="navigateTo('services'); return false;">Услуги</a></li>
+                <li><a href="#" onclick="navigateTo('about'); return false;">О нас</a></li>
+                <li><a href="#" onclick="navigateTo('contact'); return false;">Контакты</a></li>
+                <li><button class="cta-button" onclick="scrollToForm()">Заявка</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1>Увеличиваем <span class="hero-accent">продажи</span> вашего бизнеса</h1>
+                <p>Профессиональный колл-центр и лидогенерация для компаний любого масштаба.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToForm()">Оставить заявку</button>
+                    <button class="btn-secondary" onclick="navigateTo('services')">Узнать больше</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <section>
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>Исходящие продажи</h3>
+                    <p>Активный поиск и привлечение новых клиентов через холодные звонки с использованием современных методик продаж.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Входящие звонки</h3>
+                    <p>Профессиональная обработка входящих звонков, квалификация лидов и передача информации в CRM Bitrix24.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Обработка заявок</h3>
+                    <p>Мониторинг и обработка всех заявок с целью максимального увеличения конверсии и качества обслуживания.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Телемаркетинг</h3>
+                    <p>Комплексные телемаркетинговые кампании с предварительной подготовкой списков и персонализированным подходом.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Поддержка клиентов</h3>
+                    <p>Качественная техническая и информационная поддержка клиентов на протяжении всего цикла сотрудничества.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <h3>Назначение встреч</h3>
+                    <p>Эффективное управление расписанием встреч для отдела продаж с предварительной подготовкой клиентов.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section>
+            <h2>Почему выбирают нас</h2>
+            <div class="why-section">
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="why-icon">👥</div>
+                        <div class="why-content">
+                            <h3>Опытная команда операторов</h3>
+                            <p>Профессионалы с многолетним опытом работы в колл-центре и глубоким знанием рынка.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">📈</div>
+                        <div class="why-content">
+                            <h3>Высокая конверсия</h3>
+                            <p>Применяем проверенные методики, обеспечивающие результативность выше среднеотраслевых показателей.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🎧</div>
+                        <div class="why-content">
+                            <h3>Контроль качества разговоров</h3>
+                            <p>Систематический мониторинг всех звонков и постоянное повышение качества работы операторов.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🎯</div>
+                        <div class="why-content">
+                            <h3>Индивидуальный подход</h3>
+                            <p>Адаптируем методики и стратегии под специфику вашего бизнеса и целевую аудиторию.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">⚡</div>
+                        <div class="why-content">
+                            <h3>Быстрый запуск проектов</h3>
+                            <p>Минимальное время на подготовку, можем запустить проект буквально на следующий день.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">💼</div>
+                        <div class="why-content">
+                            <h3>CRM Bitrix24</h3>
+                            <p>Полная интеграция с Bitrix24 для максимальной эффективности управления клиентами и заявками.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work -->
+        <section>
+            <h2>Как мы работаем</h2>
+            <div class="steps">
+                <div class="step" data-step="1">
+                    <h3>Получаем заявку</h3>
+                    <p>Принимаем вашу заявку и запрос на сотрудничество, согласовываем детали проекта.</p>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>Анализируем задачи</h3>
+                    <p>Углубленно изучаем специфику вашего бизнеса, целевую аудиторию и ключевые метрики.</p>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>Запускаем проект</h3>
+                    <p>Готовим команду, настраиваем CRM и начинаем активную работу по привлечению клиентов.</p>
+                </div>
+                <div class="step" data-step="4">
+                    <h3>Предоставляем отчеты</h3>
+                    <p>Регулярно предоставляем подробные отчеты о результатах и метриках вашего проекта.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section>
+            <h2>О компании TOTAL FLOW</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Профессиональный колл-центр нового уровня</h3>
+                    <p>TOTAL FLOW - это современное агентство, специализирующееся на предоставлении комплексных услуг в области лидогенерации, телемаркетинга и управления входящими и исходящими звонками.</p>
+                    <p>Мы работаем с компаниями различных масштабов - от стартапов до крупных корпораций, помогая им эффективно увеличивать количество и качество клиентов.</p>
+                    <p>Наша команда состоит из опытных профессионалов, которые прошли специальную подготовку и постоянно совершенствуют свои навыки.</p>
+                    <div class="about-highlight">
+                        <p><strong>Управление через CRM Bitrix24:</strong> Вся работа компании и управление клиентами ведётся исключительно через CRM систему Bitrix24, что обеспечивает прозрачность, контроль и удобство работы с клиентами для наших партнеров.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-value">7+</div>
+                            <div class="feature-label">Лет опыта</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-value">500+</div>
+                            <div class="feature-label">Проектов</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-value">50+</div>
+                            <div class="feature-label">Специалистов</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-value">98%</div>
+                            <div class="feature-label">Клиентов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="form-section">
+            <h2>Оставить заявку</h2>
+            <div class="form-container">
+                <div id="successMessage" class="success-message"></div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Компания *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Отправить заявку</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div>
+                    <h3>TOTAL FLOW</h3>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">Профессиональный колл-центр и лидогенерация для вашего бизнеса.</p>
+                </div>
+                <div>
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@totalflow.ru">📧 info@totalflow.ru</a></li>
+                        <li><a href="tel:+74951234567">📞 +7 (495) 123-45-67</a></li>
+                        <li><a href="tel:+79991234567">📱 +7 (999) 123-45-67</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Соцсети</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/totalflow" target="_blank">✈️ Telegram</a></li>
+                        <li><a href="https://wa.me/79991234567" target="_blank">💬 WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/total_floww?igsh=amFzZmdzZDc5cXdy" target="_blank">📸 Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Меню</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="navigateTo('home'); return false;">Главная</a></li>
+                        <li><a href="#" onclick="navigateTo('services'); return false;">Услуги</a></li>
+                        <li><a href="#" onclick="navigateTo('about'); return false;">О нас</a></li>
+                        <li><a href="#" onclick="scrollToForm(); return false;">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TOTAL FLOW. Все права защищены. | Профессиональный колл-центр и лидогенерация</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        const burgerMenu = document.getElementById('burgerMenu');
+        const navLinks = document.getElementById('navLinks');
+        const logo = document.querySelector('.logo');
+
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Navigation between pages
+        function navigateTo(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            navLinks.classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to form
+        function scrollToForm() {
+            navigateTo('contact');
+            setTimeout(() => {
+                document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                comment: document.getElementById('comment').value
+            };
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = 'Спасибо за обращение в TOTAL FLOW. Мы свяжемся с вами в ближайшее время.';
+            successMessage.style.display = 'block';
+
+            // Log form data (in real app, send to server)
+            console.log('Form submitted:', formData);
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .why-item, .step, .feature').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
